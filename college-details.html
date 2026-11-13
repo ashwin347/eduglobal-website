@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College details | Eduglobal International</title>
+<link rel="icon" href="images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#95001D}a:hover{color:#0F2A66}
+@media (max-width: 1080px){.eg-desk-nav{display:none !important}.eg-burger{display:flex !important}}
+@media (min-width: 1081px){.eg-mobile-menu{display:none !important}}
+@media (max-width: 760px){.eg-topbar{display:none !important}.eg-header-row{padding:10px 16px !important;flex-wrap:nowrap !important}.eg-logo{height:36px !important}.eg-brand{font-size:16px !important}.eg-brand-2{display:block}.eg-tagline{display:none !important}.eg-hero-img{height:220px !important;flex-basis:100% !important}.eg-tall-img{height:260px !important}.eg-form{grid-template-columns:1fr !important;padding:22px !important;max-height:calc(100vh - 32px);overflow-y:auto}.eg-form > *{grid-column:1 / -1 !important}.eg-quote{padding:24px 18px !important}.eg-tcar{gap:8px !important}.eg-subnav{top:64px !important}.eg-subnav-row{flex-wrap:nowrap !important;overflow-x:auto;gap:22px !important;padding:0 16px !important}.eg-subnav-row a{white-space:nowrap;flex:none}.eg-aside{position:static !important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div style="font-family: 'Source Sans 3', sans-serif; color: #1B2440; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<div class="eg-topbar" style="background: #0F2A66; color: #D5DDF0; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px"><span>Offices in Mangaluru &amp; Bengaluru</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center">
+<a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none; font-weight: 600">Call: +91 [PHONE]</a>
+<a href="mailto:info@example.com" style="color: #FFFFFF; text-decoration: none">[info@youragency.com]</a>
+<span style="display: flex; gap: 14px"><a href="#" style="color: #FFFFFF; text-decoration: none">Facebook</a><a href="#" style="color: #FFFFFF; text-decoration: none">Instagram</a><a href="#" style="color: #FFFFFF; text-decoration: none">YouTube</a></span>
+</div>
+</div>
+</div>
+
+<header style="background: #FFFFFF; box-shadow: 0 2px 12px rgba(15,42,102,0.08); position: sticky; top: 0; z-index: 20">
+<div class="eg-header-row" style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="index.html" style="display: flex; align-items: center; gap: 12px; color: #1B2440; text-decoration: none">
+<img src="images/logo-mark.png" alt="" class="eg-logo" style="height: 44px; width: auto; display: block">
+<span style="display: flex; flex-direction: column; line-height: 1.1"><span class="eg-brand" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; color: #95001D">EDUGLOBAL <span class="eg-brand-2" style="color: #1B2440">INTERNATIONAL</span></span><span class="eg-tagline" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #45506B; font-weight: 700">Study in India and Abroad</span></span>
+</a>
+<nav aria-label="Main" class="eg-desk-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; font-size: 16px; font-weight: 600">
+<a href="index.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Home</a>
+<a href="colleges.html" aria-current="page" style="color: #95001D; text-decoration: none; padding: 8px 0; border-bottom: 2px solid #95001D">Colleges</a>
+<a href="courses.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Find a Course</a>
+<a href="about.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">About Us</a>
+<a href="services.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; color: #FFFFFF; background: #95001D; border: 0; padding: 12px 22px; border-radius: 6px; cursor: pointer">Apply Now</button>
+</nav>
+<button type="button" class="eg-burger" onClick="{{toggleMenu}}" aria-label="Open menu" aria-expanded="{{menuExpanded}}" style="display: none; flex: none; width: 44px; height: 44px; border-radius: 8px; border: 1px solid #C9D3EA; background: #FFFFFF; color: #0F2A66; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7 H20 M4 12 H20 M4 17 H20"></path></svg></button>
+</div>
+<sc-if value="{{showMenu}}" hint-placeholder-val="{{false}}">
+<nav aria-label="Mobile" class="eg-mobile-menu" style="border-top: 1px solid #E1E7F3; background: #FFFFFF; padding: 4px 16px 18px; display: flex; flex-direction: column; font-size: 17px; font-weight: 700">
+<a href="index.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Home</a>
+<a href="colleges.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Colleges</a>
+<a href="courses.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Find a Course</a>
+<a href="about.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">About Us</a>
+<a href="services.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="margin-top: 16px; font: inherit; color: #FFFFFF; background: #95001D; border: 0; padding: 14px; border-radius: 6px; cursor: pointer">Apply Now</button>
+<a href="tel:+910000000000" style="margin-top: 8px; padding: 12px; text-align: center; text-decoration: none">Call +91 [PHONE]</a>
+</nav>
+</sc-if>
+</header>
+
+<section style="background: #0F2A66; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px">
+<span style="background: #95001D; color: #FFFFFF; font-weight: 700; font-size: 14px; padding: 5px 12px; border-radius: 6px">Mangaluru</span>
+<span style="background: #17398A; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 5px 12px; border-radius: 6px">[Accreditation, e.g. NAAC grade]</span>
+<span style="background: #17398A; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 5px 12px; border-radius: 6px">Est. [YEAR]</span>
+</div>
+<h1 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.1; margin: 0 0 10px">[College Name]</h1>
+<p style="margin: 0 0 26px; color: #D5DDF0; font-size: 18px">Affiliated to [University] · Approved by [Approving body] · [Private / Deemed / Government]</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; padding: 14px 26px; border-radius: 6px; cursor: pointer">Apply Now</button>
+<a href="#" style="color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 24px; border-radius: 6px; border: 2px solid #FFFFFF">Download Brochure</a>
+</div>
+</div>
+<img src="images/college-1.jpg" alt="College campus" style="flex: 1 1 380px; min-width: 0; width: 100%; height: 280px; object-fit: cover; border-radius: 14px; display: block">
+</div>
+</section>
+
+<nav aria-label="College sections" class="eg-subnav" style="border-bottom: 1px solid #E1E7F3; background: #FFFFFF; position: sticky; top: 74px; z-index: 15">
+<div class="eg-subnav-row" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 4px 28px; font-weight: 700">
+<sc-for list="{{secs}}" as="s" hint-placeholder-count="6">
+<a href="{{s.href}}" onClick="{{s.pick}}" aria-current="{{s.cur}}" style="padding: 16px 0; color: {{s.fg}}; text-decoration: none; border-bottom: 3px solid {{s.line}}">{{s.label}}</a>
+</sc-for>
+</div>
+</nav>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 72px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<div style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 56px">
+
+<div id="overview" style="scroll-margin-top: 150px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 14px">About the College</h2>
+<p style="margin: 0 0 14px; color: #45506B">[Two or three sentences introducing the college — its history, reputation and what it is known for.]</p>
+<p style="margin: 0 0 28px; color: #45506B">[A sentence about the campus, faculty and student life.]</p>
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin: 0 0 14px">Highlights</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">[00]+</div><div style="font-size: 15px; color: #45506B">Programs offered</div></div>
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">[00] acres</div><div style="font-size: 15px; color: #45506B">Campus area</div></div>
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">[00]%</div><div style="font-size: 15px; color: #45506B">Placement rate</div></div>
+</div>
+</div>
+
+<div id="courses" style="scroll-margin-top: 150px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 6px">Courses Offered</h2>
+<p style="margin: 0 0 18px; color: #45506B">Select a course to see its full details.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<sc-for list="{{feeRows}}" as="r" hint-placeholder-count="6">
+<a href="course-details.html" style="display: block; border: 1px solid #E1E7F3; border-radius: 12px; padding: 20px 22px; text-decoration: none; color: #1B2440; box-shadow: 0 6px 20px rgba(15,42,102,0.05)">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #95001D">{{r.s}}</div>
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 21px; margin: 2px 0 10px">{{r.c}}</div>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 15px; color: #45506B; margin-bottom: 12px">
+<span>Duration: <b style="color: #1B2440">{{r.d}}</b></span>
+<span>Annual fee: <b style="color: #1B2440">₹ [Amount]</b></span>
+<span>Seats: <b style="color: #1B2440">[00]</b></span>
+</div>
+<span style="font-weight: 700; font-size: 15px; color: #95001D">View Course →</span>
+</a>
+</sc-for>
+</div>
+<p style="margin: 14px 0 0; font-size: 15px; color: #45506B">Fees are indicative and set by the college each year.</p>
+</div>
+
+<div id="facilities" style="scroll-margin-top: 150px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 18px">Facilities</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+<sc-for list="{{facilities}}" as="f" hint-placeholder-count="8">
+<div style="border: 1px solid #E1E7F3; border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; gap: 12px; font-weight: 700"><span style="width: 10px; height: 10px; border-radius: 50%; background: #95001D; flex: none"></span>{{f}}</div>
+</sc-for>
+</div>
+</div>
+
+<div id="admissions" style="scroll-margin-top: 150px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 18px">Admission Process</h2>
+<ol style="margin: 0 0 28px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{admSteps}}" as="a" hint-placeholder-count="4">
+<li style="display: flex; gap: 16px; align-items: flex-start"><span style="flex: none; width: 36px; height: 36px; border-radius: 50%; background: #0F2A66; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700">{{a.n}}</span><div><div style="font-weight: 700">{{a.t}}</div><div style="color: #45506B; font-size: 16px">{{a.d}}</div></div></li>
+</sc-for>
+</ol>
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin: 0 0 10px">Documents Required</h3>
+<ul style="margin: 0; padding-left: 20px; color: #45506B; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 24px">
+<li>10th and 12th / PUC marks cards</li><li>Entrance exam scorecard (if applicable)</li><li>Transfer and conduct certificates</li><li>ID proof and passport-size photos</li><li>Category / income certificate (if applicable)</li><li>Migration certificate (outside Karnataka)</li>
+</ul>
+</div>
+
+<div id="placements" style="scroll-margin-top: 150px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 18px">Placements</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 28px">
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">₹ [00] LPA</div><div style="font-size: 15px; color: #45506B">Highest package</div></div>
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">₹ [00] LPA</div><div style="font-size: 15px; color: #45506B">Average package</div></div>
+<div style="background: #EEF3FC; border-radius: 12px; padding: 20px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; color: #0F2A66">[000]+</div><div style="font-size: 15px; color: #45506B">Recruiters</div></div>
+</div>
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin: 0 0 14px">Top Recruiters</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px">
+<sc-for list="{{recruiters}}" as="rc" hint-placeholder-count="6"><div style="height: 70px; border: 1px solid #E1E7F3; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 10px 14px"><img src="{{rc}}" alt="Recruiter logo" style="max-height: 44px; max-width: 100%"></div></sc-for>
+</div>
+</div>
+
+</div>
+
+<aside class="eg-aside" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px; position: sticky; top: 150px">
+<div style="border: 1px solid #E1E7F3; border-radius: 14px; padding: 26px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 14px">Quick Facts</h2>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+<div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E1E7F3; padding-bottom: 10px"><dt style="color: #45506B">Location</dt><dd style="margin: 0; font-weight: 700; text-align: right">[Area], Mangaluru</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E1E7F3; padding-bottom: 10px"><dt style="color: #45506B">Type</dt><dd style="margin: 0; font-weight: 700; text-align: right">[Private]</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E1E7F3; padding-bottom: 10px"><dt style="color: #45506B">Affiliation</dt><dd style="margin: 0; font-weight: 700; text-align: right">[University]</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E1E7F3; padding-bottom: 10px"><dt style="color: #45506B">Hostel</dt><dd style="margin: 0; font-weight: 700; text-align: right">[Boys &amp; Girls]</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 12px"><dt style="color: #45506B">Streams</dt><dd style="margin: 0; font-weight: 700; text-align: right">[Medical, Nursing]</dd></div>
+</dl>
+</div>
+<div style="background: #0F2A66; color: #FFFFFF; border-radius: 14px; padding: 26px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 8px">Interested in this college?</h2>
+<p style="margin: 0 0 18px; color: #D5DDF0; font-size: 16px">Get free guidance on eligibility, fees and seat availability.</p>
+<button type="button" onClick="{{openEnquiry}}" style="width: 100%; font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; padding: 14px; border-radius: 6px; cursor: pointer">Enquire Now</button>
+<a href="tel:+910000000000" style="display: block; text-align: center; margin-top: 12px; color: #FFFFFF; font-weight: 700">Call +91 [PHONE]</a>
+</div>
+</aside>
+</section>
+
+<section id="gallery" style="background: #F6F8FC; scroll-margin-top: 130px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 24px">Campus Gallery</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<sc-for list="{{gallery}}" as="g" hint-placeholder-count="4"><img src="{{g.src}}" alt="{{g.alt}}" style="display: block; width: 100%; height: 180px; object-fit: cover; border-radius: 12px"></sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; margin: 0 0 24px">Similar Colleges</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{similar}}" as="s" hint-placeholder-count="3">
+<a href="college-details.html" style="display: block; border: 1px solid #E1E7F3; border-radius: 14px; padding: 24px; text-decoration: none; color: #1B2440; box-shadow: 0 6px 20px rgba(15,42,102,0.05)">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #95001D">{{s.city}}</div>
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 21px; margin: 4px 0 6px">[College name]</div>
+<div style="font-size: 15px; color: #45506B; margin-bottom: 12px">{{s.streams}}</div>
+<span style="font-weight: 700; font-size: 15px; color: #95001D">View Details →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="background: #0B1F4D; color: #C3CDE4; font-size: 16px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 36px">
+<div>
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px"><img src="images/logo-mark-white.png" alt="" style="height: 40px; width: auto"><span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #FFFFFF; line-height: 1.15">EDUGLOBAL<br>INTERNATIONAL</span></div>
+<p style="margin: 0 0 16px">Admission guidance for top colleges in Mangaluru and Bengaluru — from course selection to joining day.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap"><a href="#" style="color: #FFFFFF">Facebook</a><a href="#" style="color: #FFFFFF">Instagram</a><a href="#" style="color: #FFFFFF">YouTube</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Useful Links</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><a href="index.html" style="color: #C3CDE4; text-decoration: none">Home</a><a href="colleges.html" style="color: #C3CDE4; text-decoration: none">Colleges</a><a href="courses.html" style="color: #C3CDE4; text-decoration: none">Find a Course</a><a href="about.html" style="color: #C3CDE4; text-decoration: none">About Us</a><a href="services.html" style="color: #C3CDE4; text-decoration: none">Our Services</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Our Offices</div>
+<div style="margin-bottom: 14px"><b style="color: #FFFFFF">Mangaluru</b><br>[Building, Street], [Area]<br>Mangaluru, Karnataka [PIN]</div>
+<div><b style="color: #FFFFFF">Bengaluru</b><br>[Building, Street], [Area]<br>Bengaluru, Karnataka [PIN]</div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Help Line</div>
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px"><a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none">+91 [PHONE]</a></div>
+<div style="margin: 6px 0"><a href="mailto:info@example.com" style="color: #FFFFFF">[info@youragency.com]</a></div>
+<div>Mon–Sat, 9:30 am – 6:30 pm</div>
+</div>
+</div>
+<div style="border-top: 1px solid #22386B">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; font-size: 14px">
+<div>© 2026 Eduglobal International. All rights reserved.</div>
+<div style="display: flex; gap: 20px; flex-wrap: wrap"><a href="#" style="color: #C3CDE4">Privacy Policy</a><a href="#" style="color: #C3CDE4">Terms of Use</a></div>
+</div>
+</div>
+</footer>
+
+<sc-if value="{{showEnquiry}}" hint-placeholder-val="{{false}}">
+<div style="position: fixed; inset: 0; z-index: 50; background: rgba(11,31,77,0.6); display: flex; align-items: center; justify-content: center; padding: 16px">
+<form role="dialog" aria-label="Quick enquiry" class="eg-form" style="background: #FFFFFF; border-radius: 16px; padding: 30px; width: 100%; max-width: 520px; box-sizing: border-box; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 26px; margin: 0">Quick Enquiry</h2>
+<button type="button" onClick="{{closeEnquiry}}" aria-label="Close" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #C9D3EA; background: #FFFFFF; color: #1B2440; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"></path></svg></button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Name<input type="text" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Phone<input type="tel" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Email<input type="email" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Course<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Engineering</option><option>Medical / Dental</option><option>Nursing / Allied Health</option><option>Management</option><option>Commerce / Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Nearest office<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Mangaluru</option><option>Bengaluru</option></select></label>
+<button type="button" onClick="{{closeEnquiry}}" style="grid-column: 1 / -1; font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; border-radius: 6px; padding: 14px; cursor: pointer">Submit</button>
+</form>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script src="assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = { enquiry: false, active: 'overview' }; }
+componentDidMount() {
+const ids = ['overview', 'courses', 'facilities', 'admissions', 'placements', 'gallery'];
+this.onScroll = () => {
+if (this.lockUntil && Date.now() < this.lockUntil) return;
+let a = ids[0];
+for (const id of ids) {
+const el = document.getElementById(id);
+if (el && el.getBoundingClientRect().top <= 180) a = id;
+}
+const doc = document.scrollingElement || document.documentElement;
+if (doc && Math.ceil(doc.scrollTop + window.innerHeight) >= doc.scrollHeight - 2) a = ids[ids.length - 1];
+if (a !== this.state.active) this.setState({ active: a });
+};
+document.addEventListener('scroll', this.onScroll, true);
+window.addEventListener('resize', this.onScroll);
+this.onScroll();
+}
+componentWillUnmount() {
+document.removeEventListener('scroll', this.onScroll, true);
+window.removeEventListener('resize', this.onScroll);
+}
+renderVals() {
+const act = this.state.active;
+const secs = [['overview', 'Overview'], ['courses', 'Courses Offered'], ['facilities', 'Facilities'], ['admissions', 'Admissions'], ['placements', 'Placements'], ['gallery', 'Gallery']];
+return {
+secs: secs.map(([id, label]) => ({
+href: '#' + id, label: label,
+cur: id === act ? 'true' : 'false',
+fg: id === act ? '#95001D' : '#1B2440',
+line: id === act ? '#95001D' : 'transparent',
+pick: () => { this.lockUntil = Date.now() + 800; this.setState({ active: id }); }
+})),
+feeRows: [
+{ s: 'Medical', c: 'MBBS', d: '5.5 years' },
+{ s: 'Medical', c: 'BDS', d: '5 years' },
+{ s: 'Nursing', c: 'B.Sc Nursing', d: '4 years' },
+{ s: 'Nursing', c: 'GNM Nursing', d: '3 years' },
+{ s: 'Allied Health', c: 'BPT (Physiotherapy)', d: '4.5 years' },
+{ s: 'Pharmacy', c: 'B.Pharm', d: '4 years' }
+],
+facilities: ['Hostels', 'Library', 'Laboratories', 'Teaching Hospital', 'Sports Complex', 'Transport', 'Wi-Fi Campus', 'Cafeteria'],
+admSteps: [
+{ n: '1', t: 'Check eligibility', d: 'Confirm marks and entrance requirements for your chosen course.' },
+{ n: '2', t: 'Entrance & counselling', d: 'Appear for the relevant exam and take part in counselling rounds.' },
+{ n: '3', t: 'Seat allotment', d: 'Confirm your seat through counselling or the college’s admission process.' },
+{ n: '4', t: 'Document verification & fees', d: 'Submit documents and pay fees to complete admission.' }
+],
+recruiters: ['images/logo-recruiter-1.svg', 'images/logo-recruiter-2.svg', 'images/logo-recruiter-3.svg', 'images/logo-recruiter-1.svg', 'images/logo-recruiter-2.svg', 'images/logo-recruiter-3.svg'],
+gallery: [
+{ src: 'images/college-2.jpg', alt: 'Campus' },
+{ src: 'images/classroom.jpg', alt: 'Classroom' },
+{ src: 'images/lab.jpg', alt: 'Laboratory' },
+{ src: 'images/hostel.jpg', alt: 'Hostel' }
+],
+similar: [
+{ city: 'Mangaluru', streams: 'Medical · Nursing' },
+{ city: 'Mangaluru', streams: 'Pharmacy · Allied Health' },
+{ city: 'Bengaluru', streams: 'Medical · Nursing' }
+],
+showMenu: !!this.state.menu,
+menuExpanded: this.state.menu ? 'true' : 'false',
+toggleMenu: () => this.setState({ menu: !this.state.menu }),
+showEnquiry: this.state.enquiry,
+openEnquiry: () => this.setState({ enquiry: true, menu: false }),
+closeEnquiry: () => this.setState({ enquiry: false })
+};
+}
+}
+EG.mount(Component);
+</script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eduglobal International</title>
+<link rel="icon" href="images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#95001D}a:hover{color:#0F2A66}
+@media (max-width: 1080px){.eg-desk-nav{display:none !important}.eg-burger{display:flex !important}}
+@media (min-width: 1081px){.eg-mobile-menu{display:none !important}}
+@media (max-width: 760px){.eg-topbar{display:none !important}.eg-header-row{padding:10px 16px !important;flex-wrap:nowrap !important}.eg-logo{height:36px !important}.eg-brand{font-size:16px !important}.eg-brand-2{display:block}.eg-tagline{display:none !important}.eg-hero-img{height:220px !important;flex-basis:100% !important}.eg-tall-img{height:260px !important}.eg-form{grid-template-columns:1fr !important;padding:22px !important;max-height:calc(100vh - 32px);overflow-y:auto}.eg-form > *{grid-column:1 / -1 !important}.eg-quote{padding:24px 18px !important}.eg-tcar{gap:8px !important}.eg-subnav{top:64px !important}.eg-subnav-row{flex-wrap:nowrap !important;overflow-x:auto;gap:22px !important;padding:0 16px !important}.eg-subnav-row a{white-space:nowrap;flex:none}.eg-aside{position:static !important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div style="font-family: 'Source Sans 3', sans-serif; color: #1B2440; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<div class="eg-topbar" style="background: #0F2A66; color: #D5DDF0; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px"><span>Offices in Mangaluru &amp; Bengaluru</span><a href="#events" style="color: #FFFFFF; text-decoration: none">Admission Events</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center">
+<a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none; font-weight: 600">Call: +91 [PHONE]</a>
+<a href="mailto:info@example.com" style="color: #FFFFFF; text-decoration: none">[info@youragency.com]</a>
+<span style="display: flex; gap: 14px"><a href="#" style="color: #FFFFFF; text-decoration: none">Facebook</a><a href="#" style="color: #FFFFFF; text-decoration: none">Instagram</a><a href="#" style="color: #FFFFFF; text-decoration: none">YouTube</a></span>
+</div>
+</div>
+</div>
+
+<header style="background: #FFFFFF; box-shadow: 0 2px 12px rgba(15,42,102,0.08); position: sticky; top: 0; z-index: 20">
+<div class="eg-header-row" style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="index.html" style="display: flex; align-items: center; gap: 12px; color: #1B2440; text-decoration: none">
+<img src="images/logo-mark.png" alt="" class="eg-logo" style="height: 44px; width: auto; display: block">
+<span style="display: flex; flex-direction: column; line-height: 1.1"><span class="eg-brand" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; color: #95001D">EDUGLOBAL <span class="eg-brand-2" style="color: #1B2440">INTERNATIONAL</span></span><span class="eg-tagline" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #45506B; font-weight: 700">Study in India and Abroad</span></span>
+</a>
+<nav aria-label="Main" class="eg-desk-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; font-size: 16px; font-weight: 600">
+<a href="index.html" aria-current="page" style="color: #95001D; text-decoration: none; padding: 8px 0; border-bottom: 2px solid #95001D">Home</a>
+<a href="colleges.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Colleges</a>
+<a href="courses.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Find a Course</a>
+<a href="about.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">About Us</a>
+<a href="services.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; color: #FFFFFF; background: #95001D; border: 0; padding: 12px 22px; border-radius: 6px; cursor: pointer">Apply Now</button>
+</nav>
+<button type="button" class="eg-burger" onClick="{{toggleMenu}}" aria-label="Open menu" aria-expanded="{{menuExpanded}}" style="display: none; flex: none; width: 44px; height: 44px; border-radius: 8px; border: 1px solid #C9D3EA; background: #FFFFFF; color: #0F2A66; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7 H20 M4 12 H20 M4 17 H20"></path></svg></button>
+</div>
+<sc-if value="{{showMenu}}" hint-placeholder-val="{{false}}">
+<nav aria-label="Mobile" class="eg-mobile-menu" style="border-top: 1px solid #E1E7F3; background: #FFFFFF; padding: 4px 16px 18px; display: flex; flex-direction: column; font-size: 17px; font-weight: 700">
+<a href="index.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Home</a>
+<a href="colleges.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Colleges</a>
+<a href="courses.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Find a Course</a>
+<a href="about.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">About Us</a>
+<a href="services.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="margin-top: 16px; font: inherit; color: #FFFFFF; background: #95001D; border: 0; padding: 14px; border-radius: 6px; cursor: pointer">Apply Now</button>
+<a href="tel:+910000000000" style="margin-top: 8px; padding: 12px; text-align: center; text-decoration: none">Call +91 [PHONE]</a>
+</nav>
+</sc-if>
+</header>
+
+<section id="top" style="background: #EEF3FC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 80px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0">
+<div style="display: inline-block; background: #FFFFFF; color: #95001D; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 6px; margin-bottom: 18px">{{slide.tag}}</div>
+<h1 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(38px, 5vw, 60px); line-height: 1.08; color: #1B2440; margin: 0 0 18px">{{slide.title}}</h1>
+<p style="font-size: 19px; max-width: 560px; margin: 0 0 30px; color: #45506B">{{slide.text}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px">
+<a href="services.html" style="background: #FFFFFF; color: #95001D; text-decoration: none; font-weight: 700; padding: 13px 26px; border-radius: 6px; border: 2px solid #95001D">Learn More</a>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; padding: 15px 28px; border-radius: 6px; cursor: pointer">Enquire Now</button>
+</div>
+<div style="display: flex; gap: 10px; align-items: center">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="3">
+<button type="button" onClick="{{d.go}}" aria-label="{{d.label}}" style="width: {{d.w}}; height: 10px; border-radius: 5px; border: 0; padding: 0; background: {{d.bg}}; cursor: pointer"></button>
+</sc-for>
+</div>
+</div>
+<img src="{{slide.img}}" alt="{{slide.alt}}" class="eg-hero-img" style="flex: 1 1 400px; min-width: 0; width: 100%; height: 400px; object-fit: cover; border-radius: 14px; display: block">
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: -40px auto 0; padding: 0 24px; position: relative">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px">
+<a href="courses.html" style="background: #95001D; color: #FFFFFF; text-decoration: none; border-radius: 12px; padding: 26px 28px; box-shadow: 0 10px 24px rgba(15,42,102,0.18)"><div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px">Medical &amp; Nursing</div><div style="color: #D5DDF0; font-size: 15px">MBBS, BDS, Nursing, Pharmacy, Allied Health →</div></a>
+<a href="courses.html" style="background: #0F2A66; color: #FFFFFF; text-decoration: none; border-radius: 12px; padding: 26px 28px; box-shadow: 0 10px 24px rgba(15,42,102,0.18)"><div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px">Engineering</div><div style="color: #D5DDF0; font-size: 15px">B.E. / B.Tech, M.Tech, Architecture →</div></a>
+<a href="courses.html" style="background: #17398A; color: #FFFFFF; text-decoration: none; border-radius: 12px; padding: 26px 28px; box-shadow: 0 10px 24px rgba(15,42,102,0.18)"><div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px">Management &amp; Commerce</div><div style="color: #D5DDF0; font-size: 15px">BBA, MBA, B.Com, BCA and more →</div></a>
+</div>
+</section>
+
+<section id="colleges" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Study Destinations</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">Choose Your Favourite Destination!</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px">
+<div style="border-radius: 14px; overflow: hidden; border: 1px solid #E1E7F3; box-shadow: 0 6px 20px rgba(15,42,102,0.06)">
+<img src="images/city-mangaluru.jpg" alt="Mangaluru" style="display: block; width: 100%; height: 220px; object-fit: cover">
+<div style="padding: 26px 28px">
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 26px; margin: 0 0 6px">Mangaluru</h3>
+<p style="margin: 0 0 16px; color: #45506B">Coastal Karnataka's education hub — renowned for medical, dental, nursing, pharmacy and engineering colleges.</p>
+<a href="colleges.html" style="font-weight: 700; text-decoration: none">Learn More →</a>
+</div>
+</div>
+<div style="border-radius: 14px; overflow: hidden; border: 1px solid #E1E7F3; box-shadow: 0 6px 20px rgba(15,42,102,0.06)">
+<img src="images/city-bengaluru.jpg" alt="Bengaluru" style="display: block; width: 100%; height: 220px; object-fit: cover">
+<div style="padding: 26px 28px">
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 26px; margin: 0 0 6px">Bengaluru</h3>
+<p style="margin: 0 0 16px; color: #45506B">India's technology capital — top choices for engineering, management, design, commerce and computer applications.</p>
+<a href="colleges.html" style="font-weight: 700; text-decoration: none">Learn More →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="courses" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 88px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 36px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Find a Course</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">Popular programs we help you get into</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
+<sc-for list="{{courses}}" as="c" hint-placeholder-count="8">
+<a href="course-details.html" style="display: block; border: 1px solid #E1E7F3; border-radius: 12px; padding: 22px 24px; background: #FFFFFF; text-decoration: none; color: #1B2440">
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 20px">{{c.t}}</div>
+<div style="font-size: 15px; color: #45506B; margin: 4px 0 12px">{{c.d}}</div>
+<span style="font-weight: 700; font-size: 15px; color: #95001D">Learn More →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section id="events" style="background: #F6F8FC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 320px; min-width: 0">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Admission Events</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 14px">Meet college officials @ Eduglobal International</h2>
+<p style="margin: 0; color: #45506B">Attend admission fairs, spot-counselling days and campus visits organised with our partner colleges.</p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{events}}" as="e" hint-placeholder-count="3">
+<div style="background: #FFFFFF; border-radius: 12px; padding: 18px 22px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; border: 1px solid #E1E7F3">
+<div style="width: 72px; text-align: center; background: #95001D; color: #FFFFFF; border-radius: 8px; padding: 8px 0; line-height: 1.1"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 24px">[DD]</div><div style="font-size: 13px; text-transform: uppercase">[MON]</div></div>
+<div style="flex: 1 1 260px; min-width: 0"><div style="font-weight: 700; font-size: 18px">{{e.t}}</div><div style="font-size: 15px; color: #45506B">{{e.d}}</div></div>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; background: #95001D; color: #FFFFFF; border: 0; font-weight: 700; padding: 11px 20px; border-radius: 6px; font-size: 15px; cursor: pointer">Register Now</button>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 88px 24px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Testimonials</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">What Our Students Say?</h2>
+</div>
+<div class="eg-tcar" style="display: flex; align-items: center; gap: 18px; max-width: 900px; margin: 0 auto">
+<button type="button" onClick="{{prevT}}" aria-label="Previous testimonial" style="flex: none; width: 48px; height: 48px; border-radius: 50%; border: 1px solid #C9D3EA; background: #FFFFFF; color: #95001D; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M15 5 L8 12 L15 19"></path></svg></button>
+<figure class="eg-quote" style="flex: 1 1 auto; min-width: 0; margin: 0; background: #EEF3FC; border-radius: 16px; padding: 36px 40px; text-align: center">
+<blockquote style="margin: 0 0 22px; font-size: 20px">“{{t.q}}”</blockquote>
+<img src="{{t.img}}" alt="" style="object-fit: cover; width: 64px; height: 64px; border-radius: 50%; display: block; margin: 0 auto 10px">
+<figcaption style="font-size: 15px; color: #45506B"><b style="color: #1B2440; font-size: 17px">{{t.n}}</b><br>{{t.c}}</figcaption>
+</figure>
+<button type="button" onClick="{{nextT}}" aria-label="Next testimonial" style="flex: none; width: 48px; height: 48px; border-radius: 50%; border: 1px solid #C9D3EA; background: #FFFFFF; color: #95001D; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M9 5 L16 12 L9 19"></path></svg></button>
+</div>
+</section>
+
+<section id="about" style="background: #0F2A66; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 999 1 520px; min-width: 0">
+<div style="color: #D5DDF0; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">About Us</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 18px">Your Most Reliable College Admission Partner</h2>
+<p style="margin: 0 0 16px; color: #D5DDF0">Eduglobal International helps students secure seats in leading colleges across Mangaluru and Bengaluru. We know these campuses first-hand — their programs, cut-offs, fees, hostels and placement records.</p>
+<p style="margin: 0 0 26px; color: #D5DDF0">Every student gets one dedicated counsellor, from the first consultation to the first day of class.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; background: #FFFFFF; color: #95001D; border: 0; padding: 14px 26px; border-radius: 6px; cursor: pointer">Book a Consultation</button>
+<a href="about.html" style="color: #FFFFFF; text-decoration: none; font-weight: 700; padding: 12px 24px; border-radius: 6px; border: 2px solid #FFFFFF">Know More About Us</a>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div style="background: #17398A; border-radius: 12px; padding: 26px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 42px; line-height: 1">[00]+</div><div style="color: #D5DDF0; font-size: 15px; margin-top: 6px">Partner colleges</div></div>
+<div style="background: #17398A; border-radius: 12px; padding: 26px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 42px; line-height: 1">[00]+</div><div style="color: #D5DDF0; font-size: 15px; margin-top: 6px">Courses offered</div></div>
+<div style="background: #17398A; border-radius: 12px; padding: 26px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 42px; line-height: 1">2</div><div style="color: #D5DDF0; font-size: 15px; margin-top: 6px">Offices — Mangaluru &amp; Bengaluru</div></div>
+<div style="background: #FFFFFF; color: #95001D; border-radius: 12px; padding: 26px"><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 42px; line-height: 1">[0000]+</div><div style="color: #0F2A66; font-size: 15px; margin-top: 6px">Admissions secured</div></div>
+</div>
+</div>
+</section>
+
+<section id="services" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">What We Do</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">Our Services</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="6">
+<div style="border: 1px solid #E1E7F3; border-radius: 14px; padding: 30px; box-shadow: 0 6px 20px rgba(15,42,102,0.05)">
+<div style="width: 52px; height: 52px; border-radius: 12px; background: #EEF3FC; color: #95001D; display: flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 18px">{{s.n}}</div>
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin: 18px 0 8px">{{s.t}}</h3>
+<p style="margin: 0 0 14px; font-size: 16px; color: #45506B">{{s.d}}</p>
+<a href="services.html" style="font-weight: 700; font-size: 15px; text-decoration: none">Learn More →</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="border-top: 1px solid #E1E7F3; border-bottom: 1px solid #E1E7F3">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 30px; text-align: center; margin: 0 0 32px">Our Partnering Colleges</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px">
+<sc-for list="{{logos}}" as="l" hint-placeholder-count="6">
+<div style="height: 84px; border: 1px solid #E1E7F3; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 12px 16px"><img src="{{l}}" alt="Partner college logo" style="max-height: 52px; max-width: 100%"></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px">
+<div style="background: #EEF3FC; border-radius: 18px; padding: 48px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<h2 style="flex: 1 1 480px; min-width: 0; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; margin: 0">Interested in studying at a top college in Mangaluru or Bengaluru?</h2>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; padding: 16px 30px; border-radius: 6px; cursor: pointer">Book a Consultation</button>
+</div>
+</section>
+
+<footer style="background: #0B1F4D; color: #C3CDE4; font-size: 16px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 36px">
+<div>
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px"><img src="images/logo-mark-white.png" alt="" style="height: 40px; width: auto"><span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #FFFFFF; line-height: 1.15">EDUGLOBAL<br>INTERNATIONAL</span></div>
+<p style="margin: 0 0 16px">Admission guidance for top colleges in Mangaluru and Bengaluru — from course selection to joining day.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap"><a href="#" style="color: #FFFFFF">Facebook</a><a href="#" style="color: #FFFFFF">Instagram</a><a href="#" style="color: #FFFFFF">YouTube</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Useful Links</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><a href="index.html" style="color: #C3CDE4; text-decoration: none">Home</a><a href="colleges.html" style="color: #C3CDE4; text-decoration: none">Colleges</a><a href="courses.html" style="color: #C3CDE4; text-decoration: none">Find a Course</a><a href="about.html" style="color: #C3CDE4; text-decoration: none">About Us</a><a href="services.html" style="color: #C3CDE4; text-decoration: none">Our Services</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Our Offices</div>
+<div style="margin-bottom: 14px"><b style="color: #FFFFFF">Mangaluru</b><br>[Building, Street], [Area]<br>Mangaluru, Karnataka [PIN]</div>
+<div><b style="color: #FFFFFF">Bengaluru</b><br>[Building, Street], [Area]<br>Bengaluru, Karnataka [PIN]</div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Help Line</div>
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px"><a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none">+91 [PHONE]</a></div>
+<div style="margin: 6px 0"><a href="mailto:info@example.com" style="color: #FFFFFF">[info@youragency.com]</a></div>
+<div>Mon–Sat, 9:30 am – 6:30 pm</div>
+</div>
+</div>
+<div style="border-top: 1px solid #22386B">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; font-size: 14px">
+<div>© 2026 Eduglobal International. All rights reserved.</div>
+<div style="display: flex; gap: 20px; flex-wrap: wrap"><a href="#" style="color: #C3CDE4">Privacy Policy</a><a href="#" style="color: #C3CDE4">Terms of Use</a></div>
+</div>
+</div>
+</footer>
+
+<div style="position: sticky; bottom: 0; z-index: 30; background: #FFFFFF; box-shadow: 0 -4px 16px rgba(15,42,102,0.12)">
+<div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); font-weight: 700; font-size: 15px; text-align: center">
+<a href="#events" style="padding: 14px 6px; color: #1B2440; text-decoration: none">Latest Event</a>
+<a href="tel:+910000000000" style="padding: 14px 6px; color: #1B2440; text-decoration: none">Call Us</a>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; padding: 14px 6px; background: #95001D; color: #FFFFFF; border: 0; cursor: pointer">Quick Enquiry</button>
+<a href="#top" style="padding: 14px 6px; color: #1B2440; text-decoration: none">↑ Top</a>
+</div>
+</div>
+
+<sc-if value="{{showEnquiry}}" hint-placeholder-val="{{false}}">
+<div style="position: fixed; inset: 0; z-index: 50; background: rgba(11,31,77,0.6); display: flex; align-items: center; justify-content: center; padding: 16px">
+<form role="dialog" aria-label="Quick enquiry" class="eg-form" style="background: #FFFFFF; border-radius: 16px; padding: 30px; width: 100%; max-width: 520px; box-sizing: border-box; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 26px; margin: 0">Quick Enquiry</h2>
+<button type="button" onClick="{{closeEnquiry}}" aria-label="Close" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #C9D3EA; background: #FFFFFF; color: #1B2440; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"></path></svg></button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Name<input type="text" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Phone<input type="tel" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Email<input type="email" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Course<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Engineering</option><option>Medical / Dental</option><option>Nursing / Allied Health</option><option>Management</option><option>Commerce / Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Nearest office<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Mangaluru</option><option>Bengaluru</option></select></label>
+<button type="button" onClick="{{closeEnquiry}}" style="grid-column: 1 / -1; font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; border-radius: 6px; padding: 14px; cursor: pointer">Submit</button>
+</form>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script src="assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = { s: 0, t: 0, enquiry: false }; }
+componentDidMount() { this.timer = setInterval(() => this.setState({ s: (this.state.s + 1) % 3 }), 6000); }
+componentWillUnmount() { clearInterval(this.timer); }
+renderVals() {
+const slides = [
+{ tag: 'Admissions 2027–28 open', title: 'Admissions to Top Colleges in Mangaluru & Bengaluru', text: 'Expert guidance from course selection to joining day — engineering, medical, nursing, management and more.', img: 'images/hero-campus.jpg', alt: 'Students studying together' },
+{ tag: 'Medical & Nursing', title: 'Your Path to MBBS, BDS & Nursing Seats', text: 'NEET counselling guidance and admission support for leading medical colleges.', img: 'images/hero-medical.jpg', alt: 'Medical studies' },
+{ tag: 'Engineering & Management', title: 'Secure Your Seat in a Leading Engineering College', text: 'KCET and COMEDK counselling plus direct admission guidance in Bengaluru and Mangaluru.', img: 'images/hero-engineering.jpg', alt: 'Engineering studies' }
+];
+const tests = [
+{ q: 'Paste a real testimonial from a student here.', n: '[Student name]', c: '[Course], [College]', img: 'images/avatar-student-1.jpg' },
+{ q: 'Paste a real testimonial from a parent here.', n: '[Parent name]', c: 'Parent of [Student], [College]', img: 'images/avatar-parent.jpg' },
+{ q: 'Paste a real testimonial from a student here.', n: '[Student name]', c: '[Course], [College]', img: 'images/avatar-student-2.jpg' }
+];
+const s = this.state.s, t = this.state.t;
+return {
+slide: slides[s],
+dots: slides.map((x, i) => ({ label: 'Show slide ' + (i + 1), w: i === s ? '32px' : '10px', bg: i === s ? '#95001D' : '#C9D3EA', go: () => this.setState({ s: i }) })),
+t: tests[t],
+prevT: () => this.setState({ t: (t + 2) % 3 }),
+nextT: () => this.setState({ t: (t + 1) % 3 }),
+showMenu: !!this.state.menu,
+menuExpanded: this.state.menu ? 'true' : 'false',
+toggleMenu: () => this.setState({ menu: !this.state.menu }),
+showEnquiry: this.state.enquiry,
+openEnquiry: () => this.setState({ enquiry: true, menu: false }),
+closeEnquiry: () => this.setState({ enquiry: false }),
+courses: [
+{ t: 'B.E. / B.Tech', d: 'Computer Science, AI, ECE, Mechanical, Civil' },
+{ t: 'MBBS & BDS', d: 'Medical and dental programs via NEET' },
+{ t: 'B.Sc Nursing', d: 'Nursing and GNM programs' },
+{ t: 'B.Pharm / Pharm.D', d: 'Pharmacy programs' },
+{ t: 'Allied Health Sciences', d: 'Physiotherapy, MLT, Radiology and more' },
+{ t: 'BBA / MBA', d: 'Business and management programs' },
+{ t: 'B.Com / BCA', d: 'Commerce and computer applications' },
+{ t: 'Hotel Management', d: 'Hospitality and culinary programs' }
+],
+events: [
+{ t: '[Event name — e.g. Medical Admissions Fair]', d: '[Venue], Mangaluru · [Time]' },
+{ t: '[Event name — e.g. Engineering Spot Counselling]', d: '[Venue], Bengaluru · [Time]' },
+{ t: '[Event name — e.g. Campus Visit Day]', d: '[College], [City] · [Time]' }
+],
+services: [
+{ n: '01', t: 'Career Counselling', d: 'One-to-one sessions to match strengths and goals to the right program.' },
+{ n: '02', t: 'College Shortlisting', d: 'A shortlist based on marks, entrance ranks, budget and city.' },
+{ n: '03', t: 'Application Management', d: 'Forms, documents and deadlines handled precisely and on time.' },
+{ n: '04', t: 'Counselling-Round Guidance', d: 'Support through KCET, COMEDK, NEET and KEA seat-allotment rounds.' },
+{ n: '05', t: 'Scholarships & Loans', d: 'Guidance on scholarships and education-loan documentation.' },
+{ n: '06', t: 'Hostel & Relocation', d: 'Accommodation, orientation and joining-day support.' }
+],
+logos: ['images/logo-college-1.svg', 'images/logo-college-2.svg', 'images/logo-college-3.svg', 'images/logo-college-1.svg', 'images/logo-college-2.svg', 'images/logo-college-3.svg']
+};
+}
+}
+EG.mount(Component);
+</script>
+</body>
+</html>

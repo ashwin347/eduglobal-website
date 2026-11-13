@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Eduglobal International</title>
+<link rel="icon" href="images/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#95001D}a:hover{color:#0F2A66}
+@media (max-width: 1080px){.eg-desk-nav{display:none !important}.eg-burger{display:flex !important}}
+@media (min-width: 1081px){.eg-mobile-menu{display:none !important}}
+@media (max-width: 760px){.eg-topbar{display:none !important}.eg-header-row{padding:10px 16px !important;flex-wrap:nowrap !important}.eg-logo{height:36px !important}.eg-brand{font-size:16px !important}.eg-brand-2{display:block}.eg-tagline{display:none !important}.eg-hero-img{height:220px !important;flex-basis:100% !important}.eg-tall-img{height:260px !important}.eg-form{grid-template-columns:1fr !important;padding:22px !important;max-height:calc(100vh - 32px);overflow-y:auto}.eg-form > *{grid-column:1 / -1 !important}.eg-quote{padding:24px 18px !important}.eg-tcar{gap:8px !important}.eg-subnav{top:64px !important}.eg-subnav-row{flex-wrap:nowrap !important;overflow-x:auto;gap:22px !important;padding:0 16px !important}.eg-subnav-row a{white-space:nowrap;flex:none}.eg-aside{position:static !important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+<div style="font-family: 'Source Sans 3', sans-serif; color: #1B2440; background: #FFFFFF; font-size: 17px; line-height: 1.6">
+
+<div class="eg-topbar" style="background: #0F2A66; color: #D5DDF0; font-size: 14px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 8px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px"><span>Offices in Mangaluru &amp; Bengaluru</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: center">
+<a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none; font-weight: 600">Call: +91 [PHONE]</a>
+<a href="mailto:info@example.com" style="color: #FFFFFF; text-decoration: none">[info@youragency.com]</a>
+<span style="display: flex; gap: 14px"><a href="#" style="color: #FFFFFF; text-decoration: none">Facebook</a><a href="#" style="color: #FFFFFF; text-decoration: none">Instagram</a><a href="#" style="color: #FFFFFF; text-decoration: none">YouTube</a></span>
+</div>
+</div>
+</div>
+
+<header style="background: #FFFFFF; box-shadow: 0 2px 12px rgba(15,42,102,0.08); position: sticky; top: 0; z-index: 20">
+<div class="eg-header-row" style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="index.html" style="display: flex; align-items: center; gap: 12px; color: #1B2440; text-decoration: none">
+<img src="images/logo-mark.png" alt="" class="eg-logo" style="height: 44px; width: auto; display: block">
+<span style="display: flex; flex-direction: column; line-height: 1.1"><span class="eg-brand" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; color: #95001D">EDUGLOBAL <span class="eg-brand-2" style="color: #1B2440">INTERNATIONAL</span></span><span class="eg-tagline" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #45506B; font-weight: 700">Study in India and Abroad</span></span>
+</a>
+<nav aria-label="Main" class="eg-desk-nav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; font-size: 16px; font-weight: 600">
+<a href="index.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Home</a>
+<a href="colleges.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Colleges</a>
+<a href="courses.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Find a Course</a>
+<a href="about.html" aria-current="page" style="color: #95001D; text-decoration: none; padding: 8px 0; border-bottom: 2px solid #95001D">About Us</a>
+<a href="services.html" style="color: #1B2440; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; color: #FFFFFF; background: #95001D; border: 0; padding: 12px 22px; border-radius: 6px; cursor: pointer">Apply Now</button>
+</nav>
+<button type="button" class="eg-burger" onClick="{{toggleMenu}}" aria-label="Open menu" aria-expanded="{{menuExpanded}}" style="display: none; flex: none; width: 44px; height: 44px; border-radius: 8px; border: 1px solid #C9D3EA; background: #FFFFFF; color: #0F2A66; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7 H20 M4 12 H20 M4 17 H20"></path></svg></button>
+</div>
+<sc-if value="{{showMenu}}" hint-placeholder-val="{{false}}">
+<nav aria-label="Mobile" class="eg-mobile-menu" style="border-top: 1px solid #E1E7F3; background: #FFFFFF; padding: 4px 16px 18px; display: flex; flex-direction: column; font-size: 17px; font-weight: 700">
+<a href="index.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Home</a>
+<a href="colleges.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Colleges</a>
+<a href="courses.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Find a Course</a>
+<a href="about.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">About Us</a>
+<a href="services.html" style="padding: 14px 4px; border-bottom: 1px solid #E1E7F3; color: #1B2440; text-decoration: none">Our Services</a>
+<button type="button" onClick="{{openEnquiry}}" style="margin-top: 16px; font: inherit; color: #FFFFFF; background: #95001D; border: 0; padding: 14px; border-radius: 6px; cursor: pointer">Apply Now</button>
+<a href="tel:+910000000000" style="margin-top: 8px; padding: 12px; text-align: center; text-decoration: none">Call +91 [PHONE]</a>
+</nav>
+</sc-if>
+</header>
+
+<section style="background: #0F2A66; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px">
+<h1 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(36px, 4.6vw, 54px); line-height: 1.1; margin: 0 0 12px">About Eduglobal International</h1>
+<p style="margin: 0; max-width: 640px; color: #D5DDF0; font-size: 19px">Your most reliable college admission partner in Mangaluru and Bengaluru.</p>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<img src="images/team.jpg" alt="The Eduglobal International team" class="eg-tall-img" style="flex: 1 1 380px; min-width: 0; width: 100%; height: 420px; object-fit: cover; border-radius: 14px; display: block">
+<div style="flex: 999 1 520px; min-width: 0">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Our Story</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 42px); line-height: 1.15; margin: 8px 0 18px">Helping students reach the right college since [YEAR]</h2>
+<p style="margin: 0 0 16px; color: #45506B">Eduglobal International was founded in [CITY] to make college admissions simpler and more transparent for students and parents. [Add a short line about how and why the agency started.]</p>
+<p style="margin: 0 0 16px; color: #45506B">Today we guide students into leading engineering, medical, nursing, management and commerce colleges across Mangaluru and Bengaluru, with offices in both cities.</p>
+<p style="margin: 0; color: #45506B">We know these campuses first-hand — their programs, cut-offs, fees, hostels and placement records — so every recommendation is grounded in real knowledge.</p>
+</div>
+</section>
+
+<section style="background: #F6F8FC">
+<div style="max-width: 900px; margin: 0 auto; padding: 80px 24px; text-align: center">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Our Mission</div>
+<p style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.35; margin: 12px 0 0">To give every student honest, well-informed guidance and the support they need to secure a seat in a college that matches their ambition, ability and budget.</p>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border-bottom: 1px solid #E1E7F3">
+<div style="max-width: 900px; margin: 0 auto; padding: 80px 24px; text-align: center">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Our Vision</div>
+<p style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.35; margin: 12px 0 0">To be the most trusted admission partner for students choosing colleges in Karnataka.</p>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 88px 24px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Why Choose Us</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">What sets us apart</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<sc-for list="{{values}}" as="v" hint-placeholder-count="4">
+<div style="border: 1px solid #E1E7F3; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 20px rgba(15,42,102,0.05)">
+<img src="{{v.img}}" alt="" style="display: block; width: 100%; height: 160px; object-fit: cover">
+<div style="padding: 22px 24px 26px">
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin: 0 0 8px">{{v.t}}</h3>
+<p style="margin: 0; font-size: 16px; color: #45506B">{{v.d}}</p>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #0F2A66; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: center">
+<div><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">[00]+</div><div style="color: #D5DDF0">Partner colleges</div></div>
+<div><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">[00]+</div><div style="color: #D5DDF0">Courses offered</div></div>
+<div><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">[0000]+</div><div style="color: #D5DDF0">Admissions secured</div></div>
+<div><div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 48px; line-height: 1">[00]</div><div style="color: #D5DDF0">Years of experience</div></div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 88px 24px">
+<div style="text-align: center; max-width: 700px; margin: 0 auto 40px">
+<div style="color: #95001D; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase">Our Team</div>
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 8px 0 0">Meet the people who guide you</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px">
+<sc-for list="{{team}}" as="m" hint-placeholder-count="3">
+<div style="text-align: center">
+<img src="{{m.img}}" alt="" style="display: block; width: 100%; height: 260px; object-fit: cover; object-position: center top; border-radius: 14px; margin-bottom: 14px">
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 20px">{{m.n}}</div>
+<div style="color: #95001D; font-weight: 600; font-size: 15px">{{m.r}}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #F6F8FC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.15; margin: 0 0 32px; text-align: center">Visit Our Offices</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 22px">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 32px; border: 1px solid #E1E7F3">
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 26px; margin: 0 0 10px">Mangaluru</h3>
+<p style="margin: 0 0 16px; color: #45506B">[Building, Street], [Area]<br>Mangaluru, Karnataka [PIN]</p>
+<a href="#" style="font-weight: 700; text-decoration: none">Get Directions →</a>
+</div>
+<div style="background: #FFFFFF; border-radius: 14px; padding: 32px; border: 1px solid #E1E7F3">
+<h3 style="font-family: 'Outfit', sans-serif; font-size: 26px; margin: 0 0 10px">Bengaluru</h3>
+<p style="margin: 0 0 16px; color: #45506B">[Building, Street], [Area]<br>Bengaluru, Karnataka [PIN]</p>
+<a href="#" style="font-weight: 700; text-decoration: none">Get Directions →</a>
+</div>
+</div>
+<p style="text-align: center; margin: 28px 0 0">Call <a href="tel:+910000000000" style="font-weight: 700">+91 [PHONE]</a> or email <a href="mailto:info@example.com" style="font-weight: 700">[info@youragency.com]</a> · Mon–Sat, 9:30 am – 6:30 pm</p>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px">
+<div style="background: #EEF3FC; border-radius: 18px; padding: 48px 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
+<h2 style="flex: 1 1 480px; min-width: 0; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; margin: 0">Ready to plan your admission with us?</h2>
+<button type="button" onClick="{{openEnquiry}}" style="font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; padding: 16px 30px; border-radius: 6px; cursor: pointer">Book a Consultation</button>
+</div>
+</section>
+
+<footer style="background: #0B1F4D; color: #C3CDE4; font-size: 16px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 36px">
+<div>
+<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px"><img src="images/logo-mark-white.png" alt="" style="height: 40px; width: auto"><span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 20px; color: #FFFFFF; line-height: 1.15">EDUGLOBAL<br>INTERNATIONAL</span></div>
+<p style="margin: 0 0 16px">Admission guidance for top colleges in Mangaluru and Bengaluru — from course selection to joining day.</p>
+<div style="display: flex; gap: 16px; flex-wrap: wrap"><a href="#" style="color: #FFFFFF">Facebook</a><a href="#" style="color: #FFFFFF">Instagram</a><a href="#" style="color: #FFFFFF">YouTube</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Useful Links</div>
+<div style="display: flex; flex-direction: column; gap: 6px"><a href="index.html" style="color: #C3CDE4; text-decoration: none">Home</a><a href="colleges.html" style="color: #C3CDE4; text-decoration: none">Colleges</a><a href="courses.html" style="color: #C3CDE4; text-decoration: none">Find a Course</a><a href="about.html" style="color: #C3CDE4; text-decoration: none">About Us</a><a href="services.html" style="color: #C3CDE4; text-decoration: none">Our Services</a></div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Our Offices</div>
+<div style="margin-bottom: 14px"><b style="color: #FFFFFF">Mangaluru</b><br>[Building, Street], [Area]<br>Mangaluru, Karnataka [PIN]</div>
+<div><b style="color: #FFFFFF">Bengaluru</b><br>[Building, Street], [Area]<br>Bengaluru, Karnataka [PIN]</div>
+</div>
+<div>
+<div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Help Line</div>
+<div style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px"><a href="tel:+910000000000" style="color: #FFFFFF; text-decoration: none">+91 [PHONE]</a></div>
+<div style="margin: 6px 0"><a href="mailto:info@example.com" style="color: #FFFFFF">[info@youragency.com]</a></div>
+<div>Mon–Sat, 9:30 am – 6:30 pm</div>
+</div>
+</div>
+<div style="border-top: 1px solid #22386B">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; font-size: 14px">
+<div>© 2026 Eduglobal International. All rights reserved.</div>
+<div style="display: flex; gap: 20px; flex-wrap: wrap"><a href="#" style="color: #C3CDE4">Privacy Policy</a><a href="#" style="color: #C3CDE4">Terms of Use</a></div>
+</div>
+</div>
+</footer>
+
+<sc-if value="{{showEnquiry}}" hint-placeholder-val="{{false}}">
+<div style="position: fixed; inset: 0; z-index: 50; background: rgba(11,31,77,0.6); display: flex; align-items: center; justify-content: center; padding: 16px">
+<form role="dialog" aria-label="Quick enquiry" class="eg-form" style="background: #FFFFFF; border-radius: 16px; padding: 30px; width: 100%; max-width: 520px; box-sizing: border-box; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center">
+<h2 style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 26px; margin: 0">Quick Enquiry</h2>
+<button type="button" onClick="{{closeEnquiry}}" aria-label="Close" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #C9D3EA; background: #FFFFFF; color: #1B2440; cursor: pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 5 L19 19 M19 5 L5 19"></path></svg></button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Name<input type="text" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Phone<input type="tel" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Email<input type="email" style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Course<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Engineering</option><option>Medical / Dental</option><option>Nursing / Allied Health</option><option>Management</option><option>Commerce / Other</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 700">Nearest office<select style="font: inherit; font-weight: 400; padding: 11px 12px; border: 1px solid #9AA6C2; border-radius: 6px; background: #FFFFFF"><option>Mangaluru</option><option>Bengaluru</option></select></label>
+<button type="button" onClick="{{closeEnquiry}}" style="grid-column: 1 / -1; font: inherit; font-weight: 700; background: #95001D; color: #FFFFFF; border: 0; border-radius: 6px; padding: 14px; cursor: pointer">Submit</button>
+</form>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script src="assets/runtime.js"></script>
+<script>
+class Component extends DCLogic {
+constructor(p) { super(p); this.state = { enquiry: false }; }
+renderVals() {
+return {
+values: [
+{ img: 'images/value-local.jpg', t: 'Local Expertise', d: 'First-hand knowledge of colleges, courses and campuses in both cities.' },
+{ img: 'images/value-honest.jpg', t: 'Honest Advice', d: 'Recommendations based on your results and goals, never on commissions.' },
+{ img: 'images/value-counsellor.jpg', t: 'One Counsellor', d: 'A single point of contact from first consultation to joining day.' },
+{ img: 'images/value-fees.jpg', t: 'Transparent Fees', d: 'A clear fee structure, explained upfront, with no hidden charges.' }
+],
+team: [
+{ n: '[Name]', r: 'Founder & Director', img: 'images/team-1.jpg' },
+{ n: '[Name]', r: 'Senior Counsellor, Mangaluru', img: 'images/team-2.jpg' },
+{ n: '[Name]', r: 'Senior Counsellor, Bengaluru', img: 'images/team-3.jpg' }
+],
+showMenu: !!this.state.menu,
+menuExpanded: this.state.menu ? 'true' : 'false',
+toggleMenu: () => this.setState({ menu: !this.state.menu }),
+showEnquiry: this.state.enquiry,
+openEnquiry: () => this.setState({ enquiry: true, menu: false }),
+closeEnquiry: () => this.setState({ enquiry: false })
+};
+}
+}
+EG.mount(Component);
+</script>
+</body>
+</html>

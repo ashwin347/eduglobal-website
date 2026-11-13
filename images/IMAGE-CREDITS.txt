@@ -1,0 +1,39 @@
+Sample images: sources and licences
+===================================
+These are SAMPLE photos for the client presentation. Before going live, replace them
+with the agency's own photos (same file names), or keep them and follow the licence terms below.
+
+Unsplash (Unsplash License: free for commercial use, no attribution required)
+  hero-campus.jpg         unsplash.com/photos  id 1523240795612-9a054b0db644
+  hero-medical.jpg        id 1576091160550-2173dba999ef
+  hero-engineering.jpg    id 1581091226825-a6a2a5aee158
+  college-1.jpg           id 1562774053-701939374585
+  college-2.jpg           id 1592280771190-3e2e4d571952
+  college-3.jpg           id 1607237138185-eedd9c632b0b
+  classroom.jpg           id 1571260899304-425eee4c7efc
+  lab.jpg                 id 1532094349884-543bc11b234d
+  library.jpg             id 1564981797816-1043664bf78d   (not used on any page yet)
+  hostel.jpg              id 1555854877-bab0e564b8d5
+  team.jpg                id 1556761175-5973dc0f32e7
+  value-local.jpg         id 1522202176988-66273c2fd55f
+  value-honest.jpg        id 1600880292203-757bb62b4baf
+  value-counsellor.jpg    id 1454165804606-c3d57bc86b40
+  value-fees.jpg          id 1554224155-6726b3ff858f
+  avatar-student-1.jpg    id 1494790108377-be9c29b29330
+  avatar-parent.jpg       id 1507003211169-0a1dd7228f2d
+  avatar-student-2.jpg    id 1573496359142-b8d87734a5a2
+  team-1.jpg              id 1573497019940-1c28c88b4f3e
+  team-2.jpg              id 1560250097-0b93528c311a
+  team-3.jpg              id 1500648767791-00dcc994a43e
+  (Original: https://images.unsplash.com/photo-<id>)
+
+  NOTE: the portrait photos (avatar-*, team-*) are stock models, NOT real students or staff.
+  Replace them with real people's photos (with consent) before launch.
+
+Wikimedia Commons (attribution REQUIRED if kept on the live site)
+  city-mangaluru.jpg  "Mangalore Skyline 0151.jpg" by Premkudva, CC BY-SA 3.0
+                      https://commons.wikimedia.org/wiki/File:Mangalore_Skyline_0151.jpg
+  city-bengaluru.jpg  "Vidhana Soudha LE.jpg" by DeepanjanGhosh, CC BY-SA 4.0
+                      https://commons.wikimedia.org/wiki/File:Vidhana_Soudha_LE.jpg
+
+Still placeholders (need the real logos): logo-college-*.svg, logo-recruiter-*.svg

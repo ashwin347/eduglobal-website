@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="160" viewBox="0 0 400 160">
+<circle cx="70" cy="80" r="48" fill="#45506B"/><circle cx="70" cy="80" r="24" fill="#FFFFFF"/>
+<text x="135" y="78" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#45506B">COMPANY</text>
+<rect x="135" y="94" width="200" height="12" rx="6" fill="#C9D3EA"/>
+</svg>
